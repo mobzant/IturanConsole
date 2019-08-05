@@ -49,6 +49,24 @@ namespace Api
                     }
 
                 });
+
+                // Add token authorization
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+                    In = "header",
+                    Name = "Authorization",
+                    Type = "apiKey"
+                });
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+               {
+
+                { "Bearer",new string[]{}}
+                 });
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
+                
+
+
             });
 
 

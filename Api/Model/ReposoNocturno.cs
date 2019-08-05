@@ -22,6 +22,9 @@ namespace Api.Model
         public DateTime? FechaFin { get; set; }
         public DateTime? Duracion { get; set; }
         public bool ReposoCerrado { get; set; }
+        public DateTime? FechaCreacion { get; set; }
+        public Guid Id { get; set; }
+        public DateTime? FechaEdicion { get; set; }
 
     }
 }
